@@ -34,7 +34,6 @@ const {
     >
       {items.map(({ title, description, icon, callToAction, classes: itemClasses = {} }) => (
         <div>
-         
           <div class={twMerge('flex flex-row max-w-md', panelClass, itemClasses?.panel)}>
             <div class="flex justify-center">
               {(icon || defaultIcon) && (
