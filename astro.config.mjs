@@ -25,6 +25,8 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
+  site: 'https://PreciseAardvark.github.io',
+  base: 'FarmGuardian',
   output: 'static',
 
   integrations: [
