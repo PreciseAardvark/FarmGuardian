@@ -26,7 +26,6 @@ const whenExternalScripts = (items = []) =>
 
 export default defineConfig({
   site: 'https://PreciseAardvark.github.io',
-  base: 'FarmGuardian',
   output: 'static',
 
   integrations: [
