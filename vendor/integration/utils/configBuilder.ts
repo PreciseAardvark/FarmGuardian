@@ -87,7 +87,7 @@ const getSite = (config: Config) => {
     name: DEFAULT_SITE_NAME,
     site: undefined,
     base: '/',
-    trailingSlash: false,
+    trailingSlash: true,
 
     googleSiteVerificationId: '',
   };

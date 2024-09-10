@@ -1,0 +1,183 @@
+---
+import { LOCALES, useTranslations, type Lang } from '~/i18n';
+const t = useTranslations(Astro.currentLocale as Lang);
+// import { getRelativeLocaleUrl } from "astro:i18n";
+import Layout from '~/layouts/PageLayout.astro';
+import Content2 from '~/components/widgets/Content-2.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+// const locale = Astro.currentLocale as Lang;
+
+export const getStaticPaths = () =>
+  Object.keys(LOCALES).map((lang) => ({
+    params: { lang },
+  }));
+const metadata = {
+  title: 'Beyond Farm Guardian | Beyond Technology',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  
+  <Content2
+    title={t({
+      es: 'Monitoreo Porcino',
+      en: 'Pig Farming',
+    })}
+    description={t({
+      es: 'Beyond FarmGuardian monitorea en tiempo real el comportamiento, los signos de enfermedades y las condiciones de tus cerdos para maximizar el crecimiento y ahorrar dinero.',
+      en: 'Utilizing cameras and artificial intelligence, Beyond FarmGuardian lets you identify behavior patterns, disease indicators, and pen conditions in real time. To optimize growth and minimize operating expenses, make well-informed judgments grounded in precise facts. ',
+    })}
+    items={[
+      {
+        title: t({
+          es: 'Monitoreo de temperatura y humedad del corral',
+          en: 'Monitoring of pen temperature and humidity',
+        }),
+        icon: '',
+      },
+      {
+        title: t({
+          es: 'Medidas y peso',
+          en: 'Measurements and weight',
+        }),
+        icon: '',
+      },
+      {
+        title: t({
+          es: 'Previsión de crecimiento',
+          en: 'Growth prediction',
+        }),
+        icon: '',
+      },
+      {
+        title: t({
+          es: 'Identificación individual para detección de: ',
+          en: 'Individual identification for detection of: '
+        }),
+        description: 
+        t({
+          es: 'Movimientos <br> Estornudos <br> Rugidos <br> Diarrea <br> Mordidas',
+          en: 'Movements <br> Sneezes <br> Grunts <br> Diarrhea <br> Bites'
+        })
+      }
+    ]}
+    image={{
+      src: '/src/assets/images/Beyond-Farm-Guardian-pig.webp',
+      alt: 'Vaca Beyond Farm Guardian',
+    }}
+  />
+  
+<Content2
+title={t({
+  es: '¿Cómo funciona?',
+  en: 'How it works'
+})}
+description={t({
+  es: 'Trabajamos en la investigación y desarrollo de un sistema de monitoreo de cerdos con una cámara en riel que utiliza inteligencia artificial para generar datos, transmitir y enviar alertas proactivas en tiempo real para reinventar la manera en que se opera en la industria porcina. ',
+  en: 'We are working on a pig monitoring system that will employ a rail-mounted camera and artificial intelligence to create data, communicate, and issue proactive alerts in real-time, redefining the way the pig industry functions. '
+})}
+
+/>
+
+  <div class="flex items-center justify-center mb-4 md:mx-auto md:mb-4">
+    <span class="text-center text-[#1a2e56] text-[2em] font-semibold m-5 dark:text-white text-3xl">
+      {
+        t({
+          es: 'Cuida de tus cerdos con inteligencia artificial los 7 días de la semana durante los 365 días del año. ',
+          en: '365 days a year, 7 days a week, artificial intelligence can take care of your pigs.',
+        })
+      }
+    </span>
+  </div>
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title={t({
+      es: 'Preguntas Frecuentes',
+      en: 'Pig Farming',
+    })}
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: t({
+          es: '¿A partir de cuantos cerdos se puede implementar?',
+          en: 'How many pigs can be used to implement it?',
+        }),
+        description: t({
+          es: 'El sistema es adaptable a cualquier tamaño de corral, desde pequeños grupos hasta grandes explotaciones porcinas. Las cámaras se colocan dependiendo de la cantidad de cerdos y tamaño del corral, por lo que es posible adaptar la solución a diferentes espacios',
+          en: 'The system may be adjusted to fit any size pen, from tiny gatherings to big pig farms. The solution can be customized to fit various locations by installing cameras according to the size of the pen and the number of pigs.',
+        }),
+      },
+      {
+        title: t({
+          es: '¿Cuál es el espacio mínimo necesario para implementar la solución?',
+          en: 'How much room is minimally needed to put the solution into practice? ',
+        }),
+        description: t({
+          es: 'Se requiere un área con acceso a red eléctrica y conexión estable a Internet, adecuada para instalar cámaras y sensores.',
+          en: 'A location that can support cameras and sensors and has access to electricity and a reliable internet connection is required.',
+        }),
+      },
+      {
+        title: t({
+          es: '¿Cómo funciona la cámara?',
+          en: 'How is the camera operated?',
+        }),
+        description: t({
+          es: 'La cámara utiliza inteligencia artificial para analizar en tiempo real el comportamiento y la salud de los cerdos.',
+          en: 'The camera analyzes the health and behavior of the pigs in real time using artificial intelligence.',
+        }),
+      },
+      {
+        title: t({
+          es: '¿Qué elementos detecta la cámara?',
+          en: 'What components does the camera pick up on?',
+        }),
+        description: t({
+          es: 'Detecta cambios en el comportamiento, signos de enfermedades, patrones de alimentación, y movimientos inusuales.',
+          en: 'It picks up on abnormal movements, feeding habits, illness symptoms, and behavioral abnormalities.',
+        }),
+      },
+      {
+        title: t({
+          es: '¿Cómo manda las notificaciones o alertas y quién las recibe?',
+          en: 'Who receives alerts or notifications, and how are they sent?',
+        }),
+        description:
+          t({
+            es: 'Las alertas se envían automáticamente a través de una plataforma web a los dispositivos de los encargados del corral.',
+            en: "Alerts are sent to the pen's administrators' devices automatically via a web portal. "
+          })
+      },
+    ]}
+  />
+
+  <Content
+  
+  title={t({
+    es: 'Porcicultura en México',
+    en: 'Pig Farming',
+  })}
+  items={[
+    {
+      title: t({
+        es: 'La porcicultura mexicana tiene una participación de 1.4% en la aportación global, que se espera finalice 2024 con 114.1 millones de toneladas, posicionándose como en la octava posición como el mayor aportador a nivel internacional. ',
+        en: 'Mexican pig farming has a 1.4% share in the global contribution, which is expected to end 2024 with 114.1 million tons, positioning it as the eighth-largest contributor internationally. ',
+      }),
+      icon: 'tabler:pig',
+    },
+    {
+      title: t({
+        es: 'Se pronostica durante 2024 México posicionará en el extranjero 265,000 toneladas de proteína animal de puerco.',
+        en: 'Mexico is expected to export 265,000 tons of pork animal protein in 2024.',
+      }),
+      icon: 'tabler:pig',
+    }
+  ]}
+
+/>
+</Layout>

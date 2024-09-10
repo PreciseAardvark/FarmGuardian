@@ -1,22 +1,22 @@
 site:
-  name: AstroWind
+  name: Beyond Farm Guardian | Beyond Technology
   site: 'https://astrowind.vercel.app'
   base: '/'
-  trailingSlash: false
+  trailingSlash: true
 
   googleSiteVerificationId: orcPxI47GSa-cRvY11tUe6iGg2IO_RPvnA1q95iEM3M
 
 # Default SEO metadata
 metadata:
   title:
-    default: Beyond Farm Guardian
+    default: Beyond Farm Guardian | Beyond Technology
     template: '%s — AstroWind'
   description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: AstroWind
+    site_name: Beyond farm Guardian
     images:
       - url: '~/assets/images/default.png'
         width: 1200

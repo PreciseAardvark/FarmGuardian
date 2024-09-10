@@ -15,8 +15,6 @@ const {
   callToAction,
   items = [],
   columns = 2,
-  image = await Astro.slots.render('image'),
-  isReversed = false,
   isAfterContent = false,
   id,
   isDark = false,
@@ -45,8 +43,7 @@ const {
     }}
   />
   <div class="mx-auto max-w-7xl p-4 md:px-8">
-    <div class={`md:flex ${isReversed ? 'md:flex-row-reverse' : ''} md:gap-16`}>
-      <div class="md:basis-1/2 self-center">
+      <div class="md:basis-1 self-center">
         {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
         {
@@ -72,27 +69,5 @@ classes={{
 }}
 />
       </div>
-      <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
-        {
-          image && (
-            <div class="relative m-auto max-w-4xl">
-              {typeof image === 'string' ? (
-                <Fragment set:html={image} />
-              ) : (
-                <Image
-                  class="mx-auto w-full rounded-lg"
-                  width={500}
-                  height={500}
-                  widths={[400, 768]}
-                  sizes="(max-width: 768px) 100vw, 432px"
-                  layout="responsive"
-                  {...image}
-                />
-              )}
-            </div>
-          )
-        }
-      </div>
-    </div>
   </div>
 </WidgetWrapper>

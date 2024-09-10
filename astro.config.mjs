@@ -27,7 +27,7 @@ const whenExternalScripts = (items = []) =>
 export default defineConfig({
   site: 'https://PreciseAardvark.github.io',
   output: 'static',
-
+  
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -94,9 +94,11 @@ export default defineConfig({
   },
   i18n: {
     defaultLocale: "en",
-    locales: ["en", "es"]
-  },
+    locales: ["en", "es"],
   routing: {
-    prefixDefaultLocale: true
+    prefixDefaultLocale: true,
+    redirectToDefaultLocale: false,
+    trailingSlash: true
 }
+  }
 });

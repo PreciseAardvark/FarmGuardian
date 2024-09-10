@@ -1,0 +1,40 @@
+---
+// Select UI to switch between locales.
+
+import { getLocalePaths, LOCALES } from "~/i18n";
+---
+
+<label class="relative inline-block w-20">
+  
+  <select class="w-full h-10 cursor-pointer appearance-none border-2 rounded-md border-solid
+  border-[#082D53] text-white text-center bg-[#082D53]
+  dark:border-white dark:text-black dark:bg-white" data-languageSelect>
+    {
+      getLocalePaths(Astro.url).map(({ path, lang }) => (
+        <option
+          label={LOCALES[lang].label}
+          value={path}
+          data-lang={lang}
+          selected={lang === Astro.currentLocale}
+          dir={LOCALES[lang].dir || null}
+        />
+      ))
+    }
+  </select>
+</label>
+
+<script is:inline>
+  const selects = document.querySelectorAll("[data-languageSelect]");
+
+  selects.forEach((select) => {
+    select.addEventListener("change", (event) => {
+      // used for 404 page
+      localStorage.selectedLang = event.target?.selectedOptions[0].dataset.lang;
+      location.href = event.target?.value;
+    });
+  });
+</script>
+
+<style>
+
+</style>

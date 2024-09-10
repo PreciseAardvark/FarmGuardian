@@ -2,10 +2,14 @@
 <svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080">
   <defs>
     <style>
+    @media (prefers-color-scheme: dark) {
+        .cls-1 { fill: white; }
+        }
       .cls-1 {
         fill: #052c54;
         stroke-width: 0px;
       }
+      
     </style>
   </defs>
   <g>
