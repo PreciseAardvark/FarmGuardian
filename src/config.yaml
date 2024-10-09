@@ -1,6 +1,6 @@
 site:
   name: Beyond Farm Guardian | Beyond Technology
-  site: 'https://astrowind.vercel.app'
+  site: 'https://farm-guardian.vercel.app'
   base: '/'
   trailingSlash: true
 

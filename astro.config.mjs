@@ -9,7 +9,7 @@ import mdx from '@astrojs/mdx';
 import partytown from '@astrojs/partytown';
 import icon from 'astro-icon';
 import compress from 'astro-compress';
-
+import netlify from '@astrojs/netlify';
 import astrowind from './vendor/integration';
 
 import {
@@ -25,8 +25,8 @@ const whenExternalScripts = (items = []) =>
   hasExternalScripts ? (Array.isArray(items) ? items.map((item) => item()) : [items()]) : [];
 
 export default defineConfig({
-  site: 'https://PreciseAardvark.github.io',
   output: 'static',
+  adapter: netlify(),
   
   integrations: [
     tailwind({
