@@ -5,8 +5,10 @@ const t = useTranslations(Astro.currentLocale as Lang);
 import Layout from '~/layouts/PageLayout.astro';
 import Content2 from '~/components/widgets/Content-2.astro';
 import Content from '~/components/widgets/Content.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
 import FAQs from '~/components/widgets/FAQs.astro';
-// const locale = Astro.currentLocale as Lang;
+import Button from '~/components/ui/Button.astro';
 
 export const getStaticPaths = () =>
   Object.keys(LOCALES).map((lang) => ({
@@ -15,11 +17,11 @@ export const getStaticPaths = () =>
 const metadata = {
   title: 'Beyond Farm Guardian | Beyond Technology',
   ignoreTitleTemplate: true,
+  
 };
 ---
 
 <Layout metadata={metadata}>
-  
   <Content2
     title={t({
       es: 'Monitoreo Porcino',
@@ -64,7 +66,7 @@ const metadata = {
       }
     ]}
     image={{
-      src: '/src/assets/images/Beyond-Farm-Guardian-pig.webp',
+      src: '~/assets/images/Beyond-Farm-Guardian-pig.webp',
       alt: 'Vaca Beyond Farm Guardian',
     }}
   />
@@ -91,10 +93,10 @@ description={t({
       }
     </span>
   </div>
-
   <!-- FAQs Widget ******************* -->
-
-  <FAQs
+ 
+  
+<FAQs
     title={t({
       es: 'Preguntas Frecuentes',
       en: 'Pig Farming',
@@ -177,7 +179,37 @@ description={t({
       }),
       icon: 'tabler:pig',
     }
-  ]}
-
+    
+  ]
+  }
+    textSource={
+      t({
+        es:  '* Fuente: https://www.porcicultura.com/destacado/mexico-y-su-produccion-de-cerdo-inventario-y-comercio-proyecciones-positivas-del-usda',
+        en: '* Source: https://www.porcicultura.com/destacado/mexico-y-su-produccion-de-cerdo-inventario-y-comercio-proyecciones-positivas-del-usda'
+      })
+    }
+  link='https://www.porcicultura.com/destacado/mexico-y-su-produccion-de-cerdo-inventario-y-comercio-proyecciones-positivas-del-usda'
 />
+<CallToAction
+title={t({
+  es: '¿Te gustaría unirte al proyecto?',
+  en: 'Would you like to join the project? '
+})}
+subtitle={t({
+  es: 'Si quieres ser parte de la investigación o te interesa implementar esta solución de monitoreo porcino, ¡escríbenos! ',
+  en: 'Please contact us if you would want to be involved in the study or if you would like to use our pig farming monitoring system. '
+})}
+actions={[
+  {
+    variant: 'primary',
+    text: t({
+      es: 'Escríbenos',
+      en: 'Contact us'
+    }),
+    href: 'https://github.com/onwidget/astrowind',
+    target: '_blank',
+    icon: 'tabler:mail',
+  },
+]}
+> 
 </Layout>

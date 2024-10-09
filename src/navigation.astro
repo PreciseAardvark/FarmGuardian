@@ -1,24 +1,43 @@
+---
 import { getPermalink } from './utils/permalinks';
-import {useTranslations, LOCALES} from './i18n';
-const t = useTranslations();
+import { LOCALES, useTranslations, type Lang } from '~/i18n';
+const t = useTranslations(Astro.currentLocale as Lang);
 
 export const getStaticPaths = () =>
   Object.keys(LOCALES).map((lang) => ({
     params: { lang },
   }));
 
+
 export const headerData = {
   links: [
     {
+      text: 'Homes',
+      links: [
+        {
+          text: t({
+            es: 'español',
+            en: 'ingles'
+          }),
+          href: getPermalink('/homes/saas'),
+        },
+        {
+          text: 'Startup',
+          href: getPermalink('/homes/startup'),
+        },
+        {
+          text: 'Mobile App',
+          href: getPermalink('/homes/mobile-app'),
+        },
+        {
+          text: 'Personal',
+          href: getPermalink('/homes/personal'),
+        },
+      ],
+    },
+    {
       text: 'Beyond Technology',
-      href: 'https://beyondtechnology.net/',
-      links: [{
-        text: 'Partners',
-        href: 'https://beyondtechnology.net/Partners', 
-      },{
-        text: 'Blog',
-        href: 'https://beyondtechnology.net/blog',
-      }]
+      href: 'https://beyondtechnology.net/'
     },
   ],
 };
@@ -38,3 +57,5 @@ export const footerData = {
 
   ]
 };
+
+---

@@ -283,6 +283,8 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   isReversed?: boolean;
   isAfterContent?: boolean;
   callToAction?: CallToAction;
+  textSource?: string;
+  link?: string;
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}
