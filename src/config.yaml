@@ -11,12 +11,12 @@ metadata:
   title:
     default: Beyond Farm Guardian | Beyond Technology
     template: '%s — AstroWind'
-  description: "\U0001F680 Suitable for Startups, Small Business, Sass Websites, Professional Portfolios, Marketing Websites, Landing Pages & Blogs."
+  description: "We implement Technology in Livestock seeking well-being and optimization in the industry, discover the scope of this great project."
   robots:
     index: true
     follow: true
   openGraph:
-    site_name: Beyond farm Guardian
+    site_name: Beyond Farm Guardian
     images:
       - url: '~/assets/images/default.png'
         width: 1200

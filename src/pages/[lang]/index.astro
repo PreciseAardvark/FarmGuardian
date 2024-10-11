@@ -1,4 +1,5 @@
 ---
+
 import { LOCALES, useTranslations, type Lang } from '~/i18n';
 const t = useTranslations(Astro.currentLocale as Lang);
 // import { getRelativeLocaleUrl } from "astro:i18n";
@@ -6,9 +7,8 @@ import Layout from '~/layouts/PageLayout.astro';
 import Content2 from '~/components/widgets/Content-2.astro';
 import Content from '~/components/widgets/Content.astro';
 import CallToAction from '~/components/widgets/CallToAction.astro';
-
 import FAQs from '~/components/widgets/FAQs.astro';
-import Button from '~/components/ui/Button.astro';
+
 
 export const getStaticPaths = () =>
   Object.keys(LOCALES).map((lang) => ({
@@ -46,13 +46,7 @@ const metadata = {
         }),
         icon: '',
       },
-      {
-        title: t({
-          es: 'Previsión de crecimiento',
-          en: 'Growth prediction',
-        }),
-        icon: '',
-      },
+      
       {
         title: t({
           es: 'Identificación individual para detección de: ',
@@ -93,9 +87,7 @@ description={t({
       }
     </span>
   </div>
-  <!-- FAQs Widget ******************* -->
- 
-  
+
 <FAQs
     title={t({
       es: 'Preguntas Frecuentes',
