@@ -10,23 +10,26 @@ export const getStaticPaths = () =>
 export const headerData = {
   links: [
     {
-      text: 'Beyond Technology',
+      text: 'Beyond',
+      href: 'https://google.com'
+    },{
+      text: 'Partners',
       href: 'https://beyondtechnology.net/',
-      links: [{
-        text: 'Partners',
-        href: 'https://beyondtechnology.net/Partners', 
-      },{
-        text: 'Blog',
-        href: 'https://beyondtechnology.net/blog',
-      }]
-    },
+    },{
+      text: 'About',
+      href: 'https://beyondtechnology.net/',
+    },{
+      text: 'Contact',
+      href: 'https://beyondtechnology.net/',
+    }
   ],
 };
 
 export const footerData = {
   secondaryLinks: [
-    { text: 'Terms', href: getPermalink('/terms') },
-    { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    // { text: 'Privacy Policy', href: getPermalink('/privacy') },
+    { text: 'Privacy Policy', href: 'https://beyondtechnology.net/privacy-policy/'},
+    
   ],
   socialLinks: [
     { ariaLabel: 'Facebook', icon: 'tabler:brand-facebook', href: 'https://www.facebook.com/BeyondTechnologyGlobal', },
@@ -34,7 +37,7 @@ export const footerData = {
     { ariaLabel: 'X', icon: 'tabler:brand-x', href: 'https://x.com/beyondtechglobl' },
     { ariaLabel: 'Linkedin', icon: 'tabler:brand-linkedin', href: 'https://www.linkedin.com/company/beyondtechnologyglobal' },
     { ariaLabel: 'Spotify', icon: 'tabler:brand-spotify', href: 'https://open.spotify.com/show/1NHFzYtUkfT9jY6UuwsXJt'},
-    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@beyondtechnologyglobal', target: '_blank'}
+    { ariaLabel: 'Youtube', icon: 'tabler:brand-youtube', href: 'https://www.youtube.com/@beyondtechnologyglobal',}
 
   ]
 };
