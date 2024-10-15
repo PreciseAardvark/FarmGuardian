@@ -14,13 +14,13 @@ export const headerData = {
       href: 'https://google.com'
     },{
       text: 'Partners',
-      href: 'https://beyondtechnology.net/',
+      href: 'https://beyondtechnology.net/partners',
     },{
-      text: 'About',
-      href: 'https://beyondtechnology.net/',
+      text: 'Blog',
+      href: 'https://beyondtechnology.net/blog',
     },{
       text: 'Contact',
-      href: 'https://beyondtechnology.net/',
+      href: 'https://beyondtechnology.net/contact-digital-transformation/'
     }
   ],
 };
