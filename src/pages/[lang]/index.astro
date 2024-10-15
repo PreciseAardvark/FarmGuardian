@@ -7,6 +7,7 @@ import Layout from '~/layouts/PageLayout.astro';
 import Content2 from '~/components/widgets/Content-2.astro';
 import Content from '~/components/widgets/Content.astro';
 import FAQs from '~/components/widgets/FAQs.astro';
+import Features2 from '~/components/widgets/Features2.astro';
 
 
 export const getStaticPaths = () =>
@@ -63,20 +64,11 @@ const metadata = {
       alt: 'Temperatura corporal gif',
     }}
   />
-  
-<Content2
-title={t({
-  es: '¿Cómo funciona?',
-  en: 'How it works'
-})}
-description={t({
-  es: 'Trabajamos en la investigación y desarrollo de un sistema de monitoreo de cerdos con una cámara en riel que utiliza inteligencia artificial para generar datos, transmitir y enviar alertas proactivas en tiempo real para reinventar la manera en que se opera en la industria porcina. ',
-  en: 'We are working on a pig monitoring system that will employ a rail-mounted camera and artificial intelligence to create data, communicate, and issue proactive alerts in real-time, redefining the way the pig industry functions. '
-})}
 
-/>
 
-  <div class="flex items-center justify-center mb-4 md:mx-auto md:mb-4">
+  <div class="flex flex-col md:flex-row items-center justify-center mb-2 md:mx-auto md:mb-2 lg:m-5">
+    <img src="/gifs/temperatura-corporal.gif" alt="temperatura corporal" class="rounded-[25px]">
+
     <span class="text-center text-[#1a2e56] text-[2em] font-semibold m-5 dark:text-white text-3xl">
       {
         t({
@@ -84,7 +76,9 @@ description={t({
           en: '365 days a year, 7 days a week, artificial intelligence can take care of your pigs.',
         })
       }
+
     </span>
+
   </div>
 
 <FAQs
@@ -181,14 +175,39 @@ description={t({
     }
   link='https://www.porcicultura.com/destacado/mexico-y-su-produccion-de-cerdo-inventario-y-comercio-proyecciones-positivas-del-usda'
 />
-<Content
-    title={t({
-      es: 'Lee el artículo públicado en "Los Porcicultores y su Entorno"',
-      en: 'Read the article published in "Pig Farmers and their Environment"'
-    })}
-    subtitle='https://bmeditores.mx/porcicultura/ganado-mas-sano-y-granjas-mas-productivas-gracias-a-la-inteligencia-artificial-ia/'
-/>
-
+<Features2
+tagline={t({
+  es: 'Noticias',
+  en: 'News',
+})}
+items={[
+  {
+    title: t({
+      es: 'Ganado más sano y granjas más productivas, gracias a la Inteligencia Artificial (IA)',
+      en: 'Read the article published'
+    }),
+    
+    description: "A través de la detección temprana impulsada por IA podrán monitorear a nivel individual y grupal distintas variables físicas y de comportamiento que pueden indicar potenciales enfermedades o comportamientos anormales, lo hace con base en algoritmos y un motor de aprendizaje basado en el Machine Learning y el Deep Learning.",
+    icon: 'flat-color-icons:template',
+    link: 'https://bmeditores.mx/porcicultura/ganado-mas-sano-y-granjas-mas-productivas-gracias-a-la-inteligencia-artificial-ia/'
+  },
+  {
+    title: t({
+      es: 'Sistema de monitoreo y control con cámaras, en la crianza y engorda de cerdos',
+      en: 'Read the article published'
+    }),
+    
+    description: 'Sabemos que las enfermedades contagiosas en una granja industrializada pueden significar pérdidas cuantiosas, cuando la solución llega al extremo de sacrificar a los animales enfermos para evitar que se prolongue el contagio. Esto puede no solo afectar económicamente, sino también afecta los ciclos de producción por periodos de entre 6 a 8 meses.',
+    icon: 'flat-color-icons:template',
+    link: 'https://bmeditores.mx/porcicultura/sistema-de-monitoreo-y-control-con-camaras-en-la-crianza-y-engorda-de-cerdos/'
+  }
+  
+]}
+>
+<Fragment slot="bg">
+  <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+</Fragment>
+</Features2>
 <Content
 title={t({
   es: '¿Te gustaría unirte al proyecto?',
@@ -203,4 +222,6 @@ subtitle={t({
   es: 'https://forms.zohopublic.com/beyondtechnologyltd/form/FarmGuardian2024Astro/formperma/8BnS1gF8j-Wc_6HDSqdlBZ-r4makLikLUqyBHJXG2Vw',
   en: 'https://forms.zohopublic.com/beyondtechnologyltd/form/FarmGuardian2024Astro/formperma/8BnS1gF8j-Wc_6HDSqdlBZ-r4makLikLUqyBHJXG2Vw?zf_lang=en'
 })} loading = 'lazy'></iframe>
+
+
 </Layout>

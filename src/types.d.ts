@@ -141,6 +141,8 @@ export interface Item {
   classes?: Record<string, string>;
   callToAction?: CallToAction;
   image?: Image;
+  link?: string;
+  textSource?: string;
 }
 
 export interface Price {
@@ -196,6 +198,8 @@ export interface ItemGrid {
   columns?: number;
   defaultIcon?: string;
   classes?: Record<string, string>;
+  link?: string
+  textSource?: string
 }
 
 export interface Collapse {
@@ -247,6 +251,8 @@ export interface Features extends Omit<Headline, 'classes'>, Widget {
   image?: string | unknown;
   video?: Video;
   items?: Array<Item>;
+  link?: string;
+  textSource ?: string;
   columns?: number;
   defaultIcon?: string;
   callToAction1?: CallToAction;

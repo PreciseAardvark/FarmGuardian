@@ -9,9 +9,8 @@ const {
   subtitle = await Astro.slots.render('subtitle'),
   tagline = await Astro.slots.render('tagline'),
   items = [],
-  columns = 3,
+  columns = 2,
   defaultIcon,
-
   id,
   isDark = false,
   classes = {},
@@ -33,6 +32,9 @@ const {
       //   "text-center bg-page items-center md:text-left rtl:md:text-right md:items-start p-6 p-6 rounded-md shadow-xl dark:shadow-none dark:border dark:border-slate-800",
       icon: 'w-12 h-12 mb-6 text-primary',
       ...((classes?.items as Record<string, never>) ?? {}),
+      
     }}
+
   />
+
 </WidgetWrapper>
