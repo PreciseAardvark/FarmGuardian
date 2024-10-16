@@ -10,8 +10,8 @@ export const getStaticPaths = () =>
 export const headerData = {
   links: [
     {
-      text: 'Beyond',
-      href: 'https://google.com'
+      text: 'Beyond Technology',
+      href: 'https://beyondtechnology.net/'
     },{
       text: 'Partners',
       href: 'https://beyondtechnology.net/partners',

@@ -67,7 +67,7 @@ const metadata = {
 
 
   <div class="flex flex-col md:flex-row items-center justify-center mb-2 md:mx-auto md:mb-2 lg:m-5">
-    <img src="/gifs/temperatura-corporal.gif" alt="temperatura corporal" class="rounded-[25px]">
+    <img src="/gifs/temperatura-corporal.gif" alt="temperatura corporal" class="rounded-[25px] sm: p-5">
 
     <span class="text-center text-[#1a2e56] text-[2em] font-semibold m-5 dark:text-white text-3xl">
       {
@@ -184,20 +184,26 @@ items={[
   {
     title: t({
       es: 'Ganado más sano y granjas más productivas, gracias a la Inteligencia Artificial (IA)',
-      en: 'Read the article published'
+      en: 'Healthier livestock and more productive farms, thanks to Artificial Intelligence (AI)'
     }),
     
-    description: "A través de la detección temprana impulsada por IA podrán monitorear a nivel individual y grupal distintas variables físicas y de comportamiento que pueden indicar potenciales enfermedades o comportamientos anormales, lo hace con base en algoritmos y un motor de aprendizaje basado en el Machine Learning y el Deep Learning.",
+    description: t({
+      es: 'A través de la detección temprana impulsada por IA podrán monitorear a nivel individual y grupal distintas variables físicas y de comportamiento que pueden indicar potenciales enfermedades o comportamientos anormales, lo hace con base en algoritmos y un motor de aprendizaje basado en el Machine Learning y el Deep Learning.',
+      en: 'Through AI-powered early detection they will be able to monitor at individual and group level different physical and behavioral variables that may indicate potential diseases or abnormal behaviors, it does so based on algorithms and a learning engine based on Machine Learning and Deep Learning.'
+    }) ,
     icon: 'flat-color-icons:template',
     link: 'https://bmeditores.mx/porcicultura/ganado-mas-sano-y-granjas-mas-productivas-gracias-a-la-inteligencia-artificial-ia/'
   },
   {
     title: t({
       es: 'Sistema de monitoreo y control con cámaras, en la crianza y engorda de cerdos',
-      en: 'Read the article published'
+      en: 'Camera monitoring and control system for pig breeding and fattening.'
     }),
     
-    description: 'Sabemos que las enfermedades contagiosas en una granja industrializada pueden significar pérdidas cuantiosas, cuando la solución llega al extremo de sacrificar a los animales enfermos para evitar que se prolongue el contagio. Esto puede no solo afectar económicamente, sino también afecta los ciclos de producción por periodos de entre 6 a 8 meses.',
+    description: t({
+        es: 'Sabemos que las enfermedades contagiosas en una granja industrializada pueden significar pérdidas cuantiosas, cuando la solución llega al extremo de sacrificar a los animales enfermos para evitar que se prolongue el contagio. Esto puede no solo afectar económicamente, sino también afecta los ciclos de producción por periodos de entre 6 a 8 meses.',
+        en: 'We know that contagious diseases in an industrialized farm can mean heavy losses, when the solution goes to the extreme of slaughtering sick animals to avoid prolonging the contagion. This can not only affect economically, but also affect production cycles for periods of 6 to 8 months.'
+    }),
     icon: 'flat-color-icons:template',
     link: 'https://bmeditores.mx/porcicultura/sistema-de-monitoreo-y-control-con-camaras-en-la-crianza-y-engorda-de-cerdos/'
   }
