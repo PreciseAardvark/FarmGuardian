@@ -28,7 +28,8 @@ export const headerData = {
 export const footerData = {
   secondaryLinks: [
     // { text: 'Privacy Policy', href: getPermalink('/privacy') },
-    { text: 'Privacy Policy', href: 'https://beyondtechnology.net/privacy-policy/'},
+    { text: 'Privacy Policy',
+      href: 'https://beyondtechnology.net/privacy-policy/'},
     
   ],
   socialLinks: [

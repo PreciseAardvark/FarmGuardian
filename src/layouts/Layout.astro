@@ -28,6 +28,15 @@ const { language, textDirection } = I18N;
 <!doctype html>
 <html lang={language} dir={textDirection} class="2xl:text-[20px]">
   <head>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-GBNHXRHH3H"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-GBNHXRHH3H');
+</script>
     <CommonMeta />
     <Favicons />
     <CustomStyles />
@@ -35,9 +44,9 @@ const { language, textDirection } = I18N;
     <Metadata {...metadata} />
     <SiteVerification />
     <Analytics />
-
     <!-- Comment the line below to disable View Transitions -->
     <ViewTransitions fallback="swap" />
+    
   </head>
 
   <body class="antialiased text-default bg-page tracking-tight">
