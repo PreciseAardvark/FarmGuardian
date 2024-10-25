@@ -17,6 +17,7 @@ const {
   items = [],
   columns = 1,
   image = await Astro.slots.render('image'),
+  iframe = await Astro.slots.render('iframe'),
   isReversed = false,
   isAfterContent = false,
   id,
@@ -76,6 +77,15 @@ classes={{
 />
       </div>
       <div aria-hidden="true" class="mt-10 md:mt-0 md:basis-1/2">
+        {
+          <iframe src={iframe} class="mx-auto w-full rounded-lg"
+                  width={500}
+                  height={500}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen frameborder="0"
+                  title="Youtube Farm guardian"
+                  loading="lazy"
+                  ></iframe>
+        }
         {
           image && (
             <div class="relative m-auto max-w-4xl">

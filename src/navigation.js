@@ -11,16 +11,21 @@ export const headerData = {
   links: [
     {
       text: 'Beyond Technology',
-      href: 'https://beyondtechnology.net/'
+      href: 'https://beyondtechnology.net/',
+      target: '_blank'
     },{
       text: 'Partners',
       href: 'https://beyondtechnology.net/partners',
+      target: '_blank'
     },{
       text: 'Blog',
       href: 'https://beyondtechnology.net/blog',
+      target: '_blank'
     },{
       text: 'Contact',
-      href: 'https://beyondtechnology.net/contact-digital-transformation/'
+      href: '#contact',
+      title: 'Contact button',
+
     }
   ],
 };

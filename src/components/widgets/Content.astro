@@ -4,6 +4,7 @@ import Headline from '../ui/Headline.astro';
 import WidgetWrapper from '../ui/WidgetWrapper.astro';
 import Button from '~/components/ui/Button.astro';
 import ItemGrid from '../ui/ItemGrid.astro';
+import Image from '~/components/common/Image.astro';
 
 const {
   title = await Astro.slots.render('title'),
@@ -15,7 +16,8 @@ const {
   link = await Astro.slots.render('link'),
   callToAction,
   items = [],
-  columns,
+  columns = 1,
+  image = await Astro.slots.render('image'),
   isAfterContent = false,
   id,
   isDark = false,
@@ -29,7 +31,6 @@ const {
   isDark={isDark}
   containerClass={`max-w-7xl mx-auto ${isAfterContent ? 'pt-0 md:pt-0 lg:pt-0' : ''} ${classes?.container ?? ''}`}
   bg={bg}
-  
 >
   <Headline
     title={title}
@@ -44,38 +45,62 @@ const {
       image: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
     }}
   />
-  <div class="mx-auto max-w-7xl p-4 md:px-8">
-      <div class="md:basis-1 self-center">
-        {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
 
+
+
+  <div class="flex flex-col md:flex-row">
+    <div class="md:w-1/2 p-4">
+      {content && <div class="mb-12 text-lg dark:text-slate-400" set:html={content} />}
+      
+      {
+        callToAction && (
+          <div class="mt-8 text-primary">
+            <Button variant="link" {...callToAction} />
+          </div>
+        )}
+   <ItemGrid
+   items={items}
+   columns={columns}
+   defaultIcon="tabler:check"
+   classes={{
+     container: `gap-y-4 md:gap-y-8`,
+     panel: 'max-w-none',
+     title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+     description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
+     icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
+     action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
+     image: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
+   }}
+ />
+ <div class="hover: text-[#082D53] text-dark text-xs dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2 m-5">
+  <a href={link} target="_blank">{textSource}</a>
+</div>
+    </div>
+ 
+    <div class="md:w-1/2 p-0">
+     
+      
+      <div aria-hidden="true" class="mt-1 md:mt-0">
         {
-          callToAction && (
-            <div class="mt-[-40px] mb-8 text-primary">
-              <Button variant="link" {...callToAction} />
+          image && (
+            <div class="relative m-auto max-w-xs">
+              {typeof image === 'string' ? (
+                <Fragment set:html={image} />
+              ) : (
+                <Image
+                  class="mx-auto rounded-lg"
+                  width={500}
+                  height={500}
+                  widths={[400, 768]}
+                  layout="responsive"
+                  {...image}
+                />
+              )}
             </div>
           )
         }
-
-<ItemGrid
-items={items}
-columns={columns}
-defaultIcon="tabler:check"
-
-classes={{
-  container: `gap-y-4 md:gap-y-8`,
-  panel: 'max-w-none',
-  title: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-  description: 'text-muted dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2',
-  icon: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1',
-  action: 'text-lg font-medium leading-6 dark:text-white ml-2 rtl:ml-0 rtl:mr-2',
-  image: 'flex h-7 w-7 items-center justify-center rounded-full bg-green-600 dark:bg-green-700 text-gray-50 p-1'
-}}
-/>
       </div>
+    </div>
   </div>
-  <div class=" hover: text-[#082D53]  text-dark text-xs dark:text-slate-400 ml-2 rtl:ml-0 rtl:mr-2">
-  <a href={link} target="_blank">{textSource}</a>
-  </div>
-  
 
 </WidgetWrapper>

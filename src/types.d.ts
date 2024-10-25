@@ -291,6 +291,7 @@ export interface Content extends Omit<Headline, 'classes'>, Widget {
   callToAction?: CallToAction;
   textSource?: string;
   link?: string;
+  iframe?: string
 }
 
 export interface Contact extends Omit<Headline, 'classes'>, Form, Widget {}

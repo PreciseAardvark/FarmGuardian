@@ -59,12 +59,8 @@ const metadata = {
         })
       }
     ]}
-    image={{
-      src: '~/assets/images/Beyond-Farm-Guardian-pig.webp',
-      alt: 'Temperatura corporal gif',
-    }}
+    iframe='https://www.youtube.com/embed/jRLmmbQmh88?si=olAUhoSDUjjpH8Wm'
   />
-
 
   <div class="flex flex-col md:flex-row items-center justify-center mb-2 md:mx-auto md:mb-2 lg:m-5">
     <img src="/gifs/temperatura-corporal.gif" alt="temperatura corporal" class="rounded-[25px] sm: p-5">
@@ -164,15 +160,19 @@ const metadata = {
       }),
       icon: 'tabler:pig',
     }
-    
   ]
   }
+  image={{
+    src: '~/assets/images/Beyond-Farm-Guardian-pig.webp',
+    alt: 'Temperatura corporal gif',
+  }}
     textSource={
       t({
         es:  '* Fuente: https://www.porcicultura.com/destacado/mexico-y-su-produccion-de-cerdo-inventario-y-comercio-proyecciones-positivas-del-usda',
         en: '* Source: https://www.porcicultura.com/destacado/mexico-y-su-produccion-de-cerdo-inventario-y-comercio-proyecciones-positivas-del-usda'
       })
     }
+    
   link='https://www.porcicultura.com/destacado/mexico-y-su-produccion-de-cerdo-inventario-y-comercio-proyecciones-positivas-del-usda'
 />
 <Features2
@@ -227,6 +227,6 @@ subtitle={t({
 <iframe aria-label='Farm Guardian 2024 Astro' frameborder="0" style="height:800px;width:99%;border:none;" src={t({
   es: 'https://forms.zohopublic.com/beyondtechnologyltd/form/FarmGuardian2024Astro/formperma/8BnS1gF8j-Wc_6HDSqdlBZ-r4makLikLUqyBHJXG2Vw',
   en: 'https://forms.zohopublic.com/beyondtechnologyltd/form/FarmGuardian2024Astro/formperma/8BnS1gF8j-Wc_6HDSqdlBZ-r4makLikLUqyBHJXG2Vw?zf_lang=en'
-})} loading = 'lazy'></iframe>
+})} loading = 'lazy' id="contact"></iframe>
 
 </Layout>
